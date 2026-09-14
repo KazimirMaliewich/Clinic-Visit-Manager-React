@@ -9,11 +9,9 @@ export const DoctorSelect = () => {
 
       <select
         id="doctor"
-        {...register("doctor", {
-          onChange: (e) => console.log("DoctorSelect onChange:", e.target.value),
-        })}
+        {...register("doctor")}
       >
-        
+        <option value="">Select Doctor</option>
 
         <option value="cardiologist">
           Cardiologist

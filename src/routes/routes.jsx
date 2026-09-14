@@ -10,6 +10,7 @@ import { Cards } from "../Pages/CardsPage/CardsPage"
 import Layout from "../Components/Layout/LAyout"
 import { CreateCardPage } from "../Pages/CreateCardPage/CreateCardPage"
 import { CardDetailsPage } from "../Pages/CardDetailsPage/CardDetailsPage"
+import { UpdateCardPage } from "../Pages/UpdateCardPage/UpdateCardPage"
 const router = createBrowserRouter([
 
     {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
                     {
                     path: '/cards/:id',
                     element: <CardDetailsPage/>
+                    },
+                    {
+                        path: '/cards/update-cards/:id',
+                        element: <UpdateCardPage/>
                     }
                 ],
             },

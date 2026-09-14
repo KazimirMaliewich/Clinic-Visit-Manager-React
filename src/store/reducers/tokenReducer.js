@@ -1,4 +1,4 @@
-import { FETCH_TOKEN_ERROR, FETCH_TOKEN_REQUEST, FETCH_TOKEN_SUCCESS } from "../constances/constances";
+import { FETCH_TOKEN_ERROR, FETCH_TOKEN_REQUEST, FETCH_TOKEN_SUCCESS, FETCH_TOKEN_EXPIRE_MESSAGE, FETCH_TOKEN_EXPIRE_STATUS } from "../constances/constances";
 const initialState = {
   token: localStorage.getItem('token') || null,
   loading: false,
@@ -26,6 +26,13 @@ const tokenReducer = (state = initialState, action) => {
         loading: false,
         error: action.payload,
       };
+
+      case FETCH_TOKEN_EXPIRE_MESSAGE:
+      return {
+        ...state,
+        loading: false,
+        
+      }
 
     default:
       return state;

@@ -1,27 +1,29 @@
-import { URL } from "../constant/constant";
-import { cardsRequestAction, cardsSuccessAction, cardsErrorAction } from "../store/actions/cardsActions"
-export const fetchCards = () => {
+import { URL } from "../constant/constant"; 
+import { updateCardAction, cardsRequestAction, cardsErrorAction } from "../store/actions/cardsActions";
+
+export const fetchUpdateCard = (formData, id) => {
     return async (dispatch, getStore) => {
         dispatch(cardsRequestAction());
         const store = getStore()
         const token = store.token.token
-        try {
+        try{
             const response = await fetch(
-                `${URL}/api/cards`,
+                `${URL}/api/cards/${id}`,
                 {
-                    method: 'GET',
+                    method: 'PUT',
                     headers: {
                         "Content-Type": "application/json",
                         authorization: `Bearer ${token}`
-                    }
-                    
+                    },
+                    body: JSON.stringify(formData)
                 }
             )
             const data = await response.json()
-            dispatch(cardsSuccessAction(data))
-        } catch (error) {
+            dispatch(updateCardAction(data))
+            return data
+        }
+        catch (error) {
             dispatch(cardsErrorAction(error))
         }
     }
-
 }

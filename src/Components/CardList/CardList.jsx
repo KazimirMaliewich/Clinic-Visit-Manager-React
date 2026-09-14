@@ -1,7 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Card } from './Card/Card'
-export const CardList = () => {
+import { Modal } from '../Modal/Modal'
+export const CardList = ({ openModal }) => {
   const cardsId = useSelector((state) => {
     return state.cards.cardsId
   })
@@ -9,6 +10,6 @@ export const CardList = () => {
     return <p>There is no Cards</p>
   }
   return (
-    <ul>{cardsId.map((id) => <Card id={id} key={id}/>)}</ul>
+    <ul>{cardsId.map((id) => <Card openModal={openModal} id={id} key={id}/>)}</ul>
   )
 }

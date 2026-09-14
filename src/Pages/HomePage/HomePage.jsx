@@ -1,15 +1,26 @@
 import React, { useEffect } from 'react'
-import {useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Header } from '../../Components/Header/Header'
-import { tokenRequestAction } from '../../store/actions/tokenActions'
+import { tokenRequestAction, tokenExpireMessageAction, tokenExpireStatusAction } from '../../store/actions/tokenActions'
+import { fetchExpiredToken } from '../../API/fetchExpiredToken'
+import { useNavigate } from 'react-router-dom'
 export const Home = () => {
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   useEffect(() => {
-    const token = localStorage.getItem('token')
-    if(token){
-      dispatch(tokenRequestAction(token))
+
+    const init = async () => {
+      const token = await dispatch(fetchExpiredToken())
+
+      if (token) {
+        dispatch(tokenRequestAction(token))
+      }
+      else{
+        navigate("/signin")
+      }
     }
-  })
+    init()
+  }, [])
   return (
     <div>
       Hello

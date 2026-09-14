@@ -1,0 +1,22 @@
+import React from 'react'
+import { useFormContext } from 'react-hook-form'
+export const InputSearch = ({
+    name = "cardsSearch",
+    label = "Search",
+    placeholder = "Search here",
+    className = ""
+}) => {
+    const { register } = useFormContext();
+
+    return (
+        <div className={className}>
+            <label htmlFor={name}>{label}</label>
+            <input
+                id={name}
+                type="text"
+                placeholder={placeholder}
+                {...register(name)}
+            />
+        </div>
+    )
+}
