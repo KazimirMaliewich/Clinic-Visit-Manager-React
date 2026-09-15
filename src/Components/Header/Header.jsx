@@ -7,6 +7,7 @@ export const Header = () => {
   const isAuthenthificated = useSelector((state) => {
     return state.token.token
   })
+
   const handleLogout = async () => {
 
   }
@@ -14,16 +15,18 @@ export const Header = () => {
   return (
     <header>
       <div>
-      { !isAuthenthificated ? <Link to='/signin'>Sign In</Link> :
-      <><Link to='/profile'>Profile</Link>
-      <Link to='/createcard'>Create Card</Link>
-      <Link to='/cards'>Cards</Link>
-      <Button onClick={handleLogout} text='Log out' className='btn btn-primary' />
-      </>}
+        {!isAuthenthificated ? <Link to='/signin'>Sign In</Link> :
+          <><Link to='/profile'>Profile</Link>
+            <Link to='/createcard'>Create Card</Link>
+            <Link to='/cards'>Cards</Link>
+            <Button onClick={handleLogout} text='Log out' className='btn btn-primary' />
+          </>}
       </div>
-      <div>
-        <SearchForm/>
-      </div>
+      {isAuthenthificated &&
+        <div>
+          <SearchForm />
+        </div>
+      }
     </header>
   )
 }
