@@ -3,7 +3,7 @@ import { FormProvider, useForm } from 'react-hook-form'
 import { Button } from '../Button/Button'
 import signInSchema from '../../schema/signInSchema'
 import { yupResolver } from "@hookform/resolvers/yup";
-import { EmailField } from '../Input/emailField'
+import { EmailField } from '../Input/EmailField'
 import { PasswordField } from '../Input/PasswordField'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';

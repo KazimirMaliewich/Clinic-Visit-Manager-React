@@ -3,7 +3,7 @@ import { DoctorSelect } from "../Select/DoctorSelect";
 import { Button } from "../Button/Button";
 import { PrioritySelect } from "../Select/PrioritySelect";
 import { NameField } from "../Input/NameField";
-import { VisitDate } from "../Date/visitDate";
+import { VisitDate } from "../Date/VisitDate";
 import { TextAreaDescription } from "../TextArea/TextAreaDescription";
 import { HeartPressureField } from "../Input/HeartPressureField";
 import { HeartIllnessesField } from "../Input/HeartIllnessesField";
