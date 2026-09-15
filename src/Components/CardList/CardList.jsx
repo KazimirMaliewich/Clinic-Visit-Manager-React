@@ -1,7 +1,7 @@
-import React from 'react'
+
 import { useSelector } from 'react-redux'
 import { Card } from './Card/Card'
-import { Modal } from '../Modal/Modal'
+
 export const CardList = ({ openModal }) => {
   const cardsId = useSelector((state) => {
     return state.cards.cardsId

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Input } from '../Input/Input'
 import { Button } from '../Button/Button'
 import { fetchToken } from '../../API/fetchToken'

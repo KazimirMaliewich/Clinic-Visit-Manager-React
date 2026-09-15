@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 export const Button = ({type="button", onClick, text, className}) => {
   return (

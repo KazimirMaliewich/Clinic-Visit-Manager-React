@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Button } from '../../Button/Button'
-import { Modal } from '../../Modal/Modal'
 import { setCardId } from '../../../store/actions/cardsActions'
 import { useDispatch } from 'react-redux'
 export const Card = ({id, openModal}) => {

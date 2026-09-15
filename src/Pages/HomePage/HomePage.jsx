@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { Header } from '../../Components/Header/Header'
-import { tokenRequestAction, tokenExpireMessageAction, tokenExpireStatusAction } from '../../store/actions/tokenActions'
+import { tokenRequestAction } from '../../store/actions/tokenActions'
 import { fetchExpiredToken } from '../../API/fetchExpiredToken'
 import { useNavigate } from 'react-router-dom'
 export const Home = () => {

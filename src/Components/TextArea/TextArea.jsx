@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 export const TextArea = ({value, id, label, name, onChange, placeholder}) => {
   return (

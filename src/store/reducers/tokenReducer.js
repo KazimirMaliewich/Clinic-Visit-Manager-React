@@ -1,4 +1,4 @@
-import { FETCH_TOKEN_ERROR, FETCH_TOKEN_REQUEST, FETCH_TOKEN_SUCCESS, FETCH_TOKEN_EXPIRE_MESSAGE, FETCH_TOKEN_EXPIRE_STATUS } from "../constances/constances";
+import { FETCH_TOKEN_ERROR, FETCH_TOKEN_REQUEST, FETCH_TOKEN_SUCCESS, FETCH_TOKEN_EXPIRE_MESSAGE } from "../constances/constances";
 const initialState = {
   token: localStorage.getItem('token') || null,
   loading: false,

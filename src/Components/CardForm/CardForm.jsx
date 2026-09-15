@@ -1,7 +1,6 @@
-import { FormProvider, useForm, useWatch } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { DoctorSelect } from "../Select/DoctorSelect";
 import { Button } from "../Button/Button";
-import { EmailField } from "../Input/emailField";
 import { PrioritySelect } from "../Select/PrioritySelect";
 import { NameField } from "../Input/NameField";
 import { VisitDate } from "../Date/visitDate";
@@ -16,7 +15,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { VisitGoalField } from "../Input/VisitGoalField";
-import { formatTime, formatTimeForInput } from "../../utills/utills";
+import { formatTimeForInput } from "../../utills/utills";
 import { fetchUpdateCard } from "../../API/fetchUpdateCard";
 export const CardForm = () => {
 
