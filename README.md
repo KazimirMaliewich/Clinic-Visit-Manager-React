@@ -8,6 +8,23 @@
 
 Фильтр карточек (поле input для ввода текста поиска по заголовку или описанию визита, выпадающий список по статусу, выпадающий список по приоритету) вам нужно делать на фронт-енде - то есть при изменении value любого элемента формы (выбран пункт в выпадающем списке, было введено что-то в input) вы фильтруете список ранее полученных с сервера карточек, и отображаете на экране новую информацию.
 По принципу работы система должна быть похожа на фильтры в интернет-магазинах (например, слева здесь).
+
+## Continuous delivery
+
+The `main` branch is deployed to Railway through GitHub Actions after each push.
+
+Configure these GitHub repository secrets before enabling the workflow:
+
+- `RAILWAY_TOKEN` - Railway project or account token.
+- `RAILWAY_SERVICE` - Railway service name or ID for the frontend.
+
+Set `VITE_API_URL` in the Railway service variables to the public URL of the deployed backend, for example:
+
+```env
+VITE_API_URL=https://your-backend-service.up.railway.app
+```
+
+The backend is stored outside this Git repository, so it needs its own Railway service and deployment configuration.
 Классы
 
 В JavaScript коде обязательно должны быть такие классы:
